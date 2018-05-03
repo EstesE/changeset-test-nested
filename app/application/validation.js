@@ -23,6 +23,7 @@ export default {
         validatePresence({ presence: true, message: 'State is required' })
     ],
     'address.zip': [
-        validatePresence({ presence: true, message: 'Zip Code is required' })
+        validatePresence({ presence: true, message: 'Zip Code is required' }),
+        validateFormat({ regex: /^\d{5}$/, message: 'Invalid Format (00501)' }),
     ]
 };
