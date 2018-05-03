@@ -1,0 +1,13 @@
+<label for={{concat type "-" property}} class='control-label m-b-0 {{if required 'required' ''}}'>
+    {{label}}
+</label>
+
+<input type="text" class="form-control {{if (get changeset.error property) 'bg-danger' ''}}" oninput={{action (mut (get changeset property)) value="target.value"}} value={{get changeset property}} />
+
+{{#if hasErrors}}
+    {{#each (get hasErrors 'validation') as |message index|}}
+        {{#if (eq index 0)}}
+            <small style="position: absolute;"><label class="control-label text-danger">{{message}}</label></small>
+        {{/if}}
+    {{/each}}
+{{/if}}

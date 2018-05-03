@@ -1,0 +1,21 @@
+<label for={{concat type "-" property}} class='control-label m-b-0 {{if required 'required' ''}}'>
+    {{label}}
+</label>
+{{#x-select id=componentId on-change=onChange value=(get this.changeset property) class="form-control" as |xs|}}
+    {{#if defaultDisplay}}
+    {{#xs.option value=null}}{{this.defaultDisplay}}{{/xs.option}}
+    {{/if}}
+    {{#each this.options as |option|}}
+        {{#xs.option value=option.value}}
+            {{option.display}}
+        {{/xs.option}}
+    {{/each}}
+{{/x-select}}
+
+{{#if hasErrors}}
+    {{#each (get hasErrors 'validation') as |message index|}}
+        {{#if (eq index 0)}}
+            <small style="position: absolute;"><label class="control-label text-danger">{{message}}</label></small>
+        {{/if}}
+    {{/each}}
+{{/if}}

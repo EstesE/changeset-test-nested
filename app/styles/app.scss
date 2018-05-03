@@ -1,0 +1,7 @@
+@import "ember-bootstrap/bootstrap";
+@import "ember-power-select";
+
+.required:after {
+    color: #d9534f;
+    content: " *";
+}

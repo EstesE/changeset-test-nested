@@ -1,0 +1,68 @@
+<div class="col-md-12">
+{{validated-text 
+    changeset=changeset
+    property="name" 
+    label="Name" 
+    required=true 
+    validateProperty=(action 'validateProperty' changeset "name")
+}}
+</div>
+
+<div class="col-md-12">
+{{validated-text 
+    changeset=changeset
+    property="email" 
+    label="Email" 
+    required=true 
+    validateProperty=(action 'validateProperty' changeset "email")
+}}
+</div>
+
+<div class="col-md-4">
+{{validated-text 
+    changeset=changeset
+    property="address.street" 
+    label="Street" 
+    required=true 
+    validateProperty=(action 'validateProperty' changeset "street")
+}}
+</div>
+<div class="col-md-4">
+{{validated-text 
+    changeset=changeset
+    property="address.city" 
+    label="City" 
+    required=true 
+    validateProperty=(action 'validateProperty' changeset "city")
+}}
+</div>
+<div class="col-md-2">
+{{validated-select
+    componentId='state'
+    changeset=changeset
+    options=usStates
+    property='address.state'
+    display='name'
+    value='value'
+    required=true
+    classes="form-control"
+    defaultDisplay="--- Select State ---"
+    onChange=(action 'selectState' changeset)
+    label="State"
+}}
+</div>
+<div class="col-md-2">
+{{validated-text 
+    changeset=changeset
+    property="address.zip" 
+    label="Postal Code" 
+    required=true 
+    validateProperty=(action 'validateProperty' changeset "zip")
+}}
+</div>
+
+<div class="col-md-12">
+    <button class="btn btn-primary pull-right" {{action restore changeset}}>Restore</button>
+</div>
+
+{{yield}}
