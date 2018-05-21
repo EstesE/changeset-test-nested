@@ -1,5 +1,5 @@
 <label for={{concat type "-" property}} class='control-label m-b-0 {{if required 'required' ''}}'>
-    {{label}}
+    {{label}} <span style="font-weight: 100; font-size: 10pt">(changeset value: <i>{{mut (get changeset property)}}</i>)</span>
 </label>
 
 <input type="text" class="form-control {{if (get changeset.error property) 'bg-danger' ''}}" oninput={{action (mut (get changeset property)) value="target.value"}} value={{get changeset property}} />
