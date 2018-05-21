@@ -11,6 +11,8 @@
         {{/xs.option}}
     {{/each}}
 {{/x-select}}
+<div><span style="font-weight: 100; font-size: 10pt">(changeset value: <i>{{mut (get changeset property)}}</i>)</span></div>
+<div><span style="font-weight: 100; font-size: 10pt">(model value: <i>{{mut (get model property)}}</i>)</span></div>
 
 {{#if hasErrors}}
     {{#each (get hasErrors 'validation') as |message index|}}
