@@ -18,6 +18,7 @@ export default Route.extend({
     },
 
     setupController(controller, model) {
+        controller.set('model', model);
         controller.set('changeset', new Changeset(model, lookupValidator(Validations), Validations));
         controller.set('snapshot', controller.changeset.snapshot());
     }
