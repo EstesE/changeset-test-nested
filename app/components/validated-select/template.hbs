@@ -1,5 +1,5 @@
 <label for={{concat type "-" property}} class='control-label m-b-0 {{if required 'required' ''}}'>
-    {{label}} {{#if nested}}<span style="font-weight: 100; font-size: 10pt; color: blue;"> (nested property</span>){{/if}}
+    {{label}} {{#if nested}}<span style="font-weight: 100; font-size: 10pt; color: blue;"> (nested property)</span>{{/if}}
 </label>
 {{#x-select id=componentId on-change=onChange value=(get this.changeset property) class="form-control" as |xs|}}
     {{#if defaultDisplay}}
